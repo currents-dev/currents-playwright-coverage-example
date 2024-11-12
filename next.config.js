@@ -34,6 +34,10 @@ const nextConfig = {
       },
     ];
   },
+  experimental: {
+    // Use babel instead of SWC when running tests https://nextjs.org/docs/messages/swc-disabled
+    forceSwcTransforms: !process.env.USE_BABEL,
+  },
 };
 
 module.exports = nextConfig;

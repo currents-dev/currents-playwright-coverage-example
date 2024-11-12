@@ -1,62 +1,19 @@
-# Nextfolio
+# Currents Coverage with Playwright
 
-A clean, fast, and lightweight portfolio template built with [Next.js](https://nextjs.org/), [Vercel](https://vercel.com/), and [Tailwind CSS](https://tailwindcss.com/) for optimal performance.
+Report [coverage results](https://docs.currents.dev/guides/coverage) to Currents.
 
-Deploy your Nextfolio site with Vercel in minutes.
+![Currents Coverage Demo](https://docs.currents.dev/~gitbook/image?url=https%3A%2F%2F3745692499-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FqmFDEiUa9mr11LUlxDnt%252Fuploads%252FyZRU4fhHAhY4XcT7KgAL%252Fcurrents-2023-09-13-12.16.07.gif%3Falt%3Dmedia%26token%3D4f54d50a-e1af-4ba9-85e3-8c79592ebd7c&width=768&dpr=1&quality=100&sign=710fa6da&sv=1)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F1msirius%2FNextfolio)
+## Setup
 
-## Technologies Used
+- Install dependencies with `npm install`
+- Update the `pwc` command in `package.json` with your Currents [record key](https://docs.currents.dev/guides/record-key) and [project id](https://docs.currents.dev/dashboard/projects/project-settings)
+- Run `test:e2e`
 
-- Framework: [Next.js](https://nextjs.org/)
-- Typography: [Vercel Geist Font](https://vercel.com/font)
-- Styling: [Tailwind CSS](https://tailwindcss.com/)
-- Analytics: [Vercel Web Analytics](https://vercel.com/docs/speed-insights) and [Speed Insights](https://vercel.com/docs/speed-insights)
-- Deployment: [Vercel](https://vercel.com/)
+## About
 
-## Features
-
-- **[MDX](https://mdxjs.com/) Support**: Use Markdown with JSX components for blog posts.
-- **Light and Dark Mode Toggle**: Switch between themes for better readability.
-- **Dynamic [OG Images](https://vercel.com/docs/functions/og-image-generation)**: Auto-generate Open Graph images for sharing.
-- **SEO Optimization**: Enhance search visibility with sitemap, robots.txt, and JSON-LD schema.
-- **Dynamic Feed Generation**: Automatic dynamic [RSS](https://nextfolio-template.vercel.app/rss.xml), [Atom](https://nextfolio-template.vercel.app/atom.xml), and [JSON](https://nextfolio-template.vercel.app/feed.json) feeds.
-- **[KaTeX](https://katex.org/) Integration**: Render mathematical expressions smoothly.
-- **Performance Tracking**: Monitor web performance with [Vercel Web Analytics](https://vercel.com/docs/speed-insights) and [Speed Insights](https://vercel.com/docs/speed-insights).
-- **Interactive Embeds**: Easily embed interactive tweets and YouTube videos.
-- **Captions**: Add descriptive captions to photos, tweets, and videos.
-- **Image Grid**: Easily showcase image galleries or photos.
-
-## Installation
-
-Nextfolio uses [pnpm](https://pnpm.io/installation) for dependency management, so ensure it is installed on your system.
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
-```
-pnpm create next-app --example https://github.com/1msirius/Nextfolio my-portfolio
-```
-
-Start the development server:
-
-```
-pnpm dev
-```
-
-The server will be running at [http://localhost:3000](http://localhost:3000).
-
-## Configuration
-
-1. Update the site metadata and social links in `app/config.ts` to set up SEO, feeds, social links, and Open Graph settings.
-2. Update your routes in `app/sitemap.ts` for SEO optimization.
-3. Update your blog posts in the `/content` folder.
-
-For more information about configuration, follow the instructions in the [Getting Started](https://nextfolio-template.vercel.app/blog/getting-started#configuration) post.
-
-## Contributing
-
-Contributions are welcome! To get involved, just push your code to the repo. Whether you're enhancing existing features or adding new ones, your efforts are greatly appreciated!
+This is a NextJS app created from the [NextFolio](https://vercel.com/templates/next.js/nextfolio-a-simple-next-js-portfolio) template.
 
 ## Licence
 
-Nextfolio is open-source and released under the MIT License.
+MIT License.

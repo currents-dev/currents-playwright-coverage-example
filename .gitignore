@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+/test-results
+.nyc_output
 
 # next.js
 /.next/
