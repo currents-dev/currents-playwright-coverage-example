@@ -1,4 +1,5 @@
-import { test, expect } from "@currents/playwright-test-coverage";
+import { expect } from "@playwright/test";
+import { test } from "./test.ts";
 
 test.describe("Home Page", () => {
   test("should display header", async ({ page }) => {
