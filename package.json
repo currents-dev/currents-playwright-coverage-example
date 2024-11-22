@@ -6,7 +6,9 @@
     "build": "next build",
     "start": "next start",
     "test:e2e": "USE_BABEL=true start-server-and-test dev http://localhost:3000 pwc",
-    "pwc": "CURRENTS_RECORD_KEY=<key> CURRENTS_PROJECT_ID=<project-id> pwc --pwc-coverage chromium ./tests/e2e"
+    "test:e2e:pwc-p": "USE_BABEL=true start-server-and-test dev http://localhost:3000 pwc",
+    "pwc": "pwc",
+    "pwc-p": "pwc-p --ci-build-id `date +%s`"
   },
   "dependencies": {
     "@types/node": "22.5.0",
@@ -32,8 +34,8 @@
     "typescript": "5.5.4"
   },
   "devDependencies": {
-    "@currents/playwright": "^1.7.0",
-    "@playwright/test": "^1.48.2",
+    "@currents/playwright": "^1.7.1",
+    "@playwright/test": "^1.49.0",
     "@tailwindcss/typography": "^0.5.14",
     "autoprefixer": "^10.4.20",
     "babel-plugin-istanbul": "^7.0.0",

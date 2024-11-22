@@ -7,8 +7,9 @@ Report [coverage results](https://docs.currents.dev/guides/coverage) to Currents
 ## Setup
 
 - Install dependencies with `npm install`
-- Update the `pwc` command in `package.json` with your Currents [record key](https://docs.currents.dev/guides/record-key) and [project id](https://docs.currents.dev/dashboard/projects/project-settings)
-- Run `test:e2e`
+- Update `currents.config.ts` with Currents [record key](https://docs.currents.dev/guides/record-key) and [project id](https://docs.currents.dev/dashboard/projects/project-settings)
+- Run `npm run test:e2e` for sharded runs
+- Run `npm run test:e2e:pwc-p` for orchestrated runs
 
 ## About
 
@@ -16,4 +17,4 @@ This is a NextJS app created from the [NextFolio](https://vercel.com/templates/n
 
 ## Licence
 
-MIT License.
+MIT License
