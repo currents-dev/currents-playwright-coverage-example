@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+
   async rewrites() {
     return [
       {
@@ -33,10 +34,6 @@ const nextConfig = {
         destination: "/feed/feed.json",
       },
     ];
-  },
-  experimental: {
-    // Use babel instead of SWC when running tests https://nextjs.org/docs/messages/swc-disabled
-    forceSwcTransforms: !process.env.USE_BABEL,
   },
 };
 

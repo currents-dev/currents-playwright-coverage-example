@@ -1,9 +1,10 @@
+import { currentsReporter } from "@currents/playwright";
 import { devices, PlaywrightTestConfig } from "@playwright/test";
 
 const baseURL = "http://localhost:3000";
 
 const config: PlaywrightTestConfig = {
-  timeout: 5 * 1000,
+  timeout: 10 * 1000,
 
   use: {
     baseURL,
@@ -13,28 +14,35 @@ const config: PlaywrightTestConfig = {
     trace: "off",
   },
 
+  reporter: [
+    currentsReporter({
+      recordKey: process.env.CURRENTS_RECORD_KEY ?? "your-record-key",
+      projectId: process.env.CURRENTS_PROJECT_ID ?? "your-project-id",
+      coverage: {
+        projects: true,
+      },
+    }),
+  ],
   projects: [
     {
       name: "chromium",
       retries: 2,
-      metadata: {
-        pwc: {
-          tags: ["project:chrome"],
-        },
-      },
       use: {
         ...devices["Desktop Chrome"],
       },
     },
     {
       name: "firefox",
-      metadata: {
-        pwc: {
-          tags: ["project:firefox"],
-        },
-      },
+      retries: 2,
       use: {
         ...devices["Desktop Firefox"],
+      },
+    },
+    {
+      name: "webkit",
+      retries: 2,
+      use: {
+        ...devices["Desktop Safari"],
       },
     },
   ],
