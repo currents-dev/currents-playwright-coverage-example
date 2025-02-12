@@ -1,9 +1,23 @@
-import { currentsReporter } from "@currents/playwright";
-import { devices, PlaywrightTestConfig } from "@playwright/test";
+import {
+  CurrentsFixtures,
+  currentsReporter,
+  CurrentsWorkerFixtures,
+} from "@currents/playwright";
+import { defineConfig, devices } from "@playwright/test";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const baseURL = "http://localhost:3000";
 
-const config: PlaywrightTestConfig = {
+const currentsConfig = {
+  recordKey: process.env.CURRENTS_RECORD_KEY ?? "your-record-key",
+  projectId: process.env.CURRENTS_PROJECT_ID ?? "your-project-id",
+  coverage: {
+    projects: true,
+  },
+};
+
+const config = defineConfig<CurrentsFixtures, CurrentsWorkerFixtures>({
   timeout: 10 * 1000,
 
   use: {
@@ -12,17 +26,10 @@ const config: PlaywrightTestConfig = {
     screenshot: "off",
     video: "off",
     trace: "off",
+    currentsConfigOptions: currentsConfig,
   },
 
-  reporter: [
-    currentsReporter({
-      recordKey: process.env.CURRENTS_RECORD_KEY ?? "your-record-key",
-      projectId: process.env.CURRENTS_PROJECT_ID ?? "your-project-id",
-      coverage: {
-        projects: true,
-      },
-    }),
-  ],
+  reporter: [currentsReporter(currentsConfig)],
   projects: [
     {
       name: "chromium",
@@ -48,6 +55,6 @@ const config: PlaywrightTestConfig = {
   ],
 
   outputDir: "test-results/",
-};
+});
 
 export default config;
