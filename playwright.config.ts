@@ -1,7 +1,11 @@
 import { currentsReporter } from "@currents/playwright";
 import { devices, PlaywrightTestConfig } from "@playwright/test";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const baseURL = "http://localhost:3000";
+
+console.log("DATA::", process.env.CURRENTS_RECORD_KEY);
 
 const config: PlaywrightTestConfig = {
   timeout: 10 * 1000,
